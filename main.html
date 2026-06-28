@@ -1,599 +1,658 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Кофейня «Уют»</title>
-    
-    <!-- ===== ВСЕ СТИЛИ ВНУТРИ ===== -->
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: -apple-system, 'Segoe UI', Roboto, sans-serif;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Кофейня «Уют»</title>
 
-        body {
-            background: #faf7f2;
-            color: #2c241a;
-            font-size: 16px;
-            line-height: 1.5;
-        }
+  <!-- ===== ВСЕ СТИЛИ ВНУТРИ ===== -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: -apple-system, 'Segoe UI', Roboto, sans-serif;
+    }
 
-        .container {
-            padding: 0 16px;
-            max-width: 480px;
-            margin: 0 auto;
-        }
+    body {
+      background: #faf7f2;
+      color: #2c241a;
+      font-size: 16px;
+      line-height: 1.5;
+    }
 
-        header {
-            background: #2c241a;
-            padding: 14px 0 12px;
-            position: sticky;
-            top: 0;
-            z-index: 50;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.3);
-        }
+    .container {
+      padding: 0 16px;
+      max-width: 480px;
+      margin: 0 auto;
+    }
 
-        .header-inner {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
+    header {
+      background: #2c241a;
+      padding: 14px 0 12px;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+    }
 
-        .logo {
-            font-size: 1.4rem;
-            font-weight: 600;
-            color: #f1e9df;
-        }
-        .logo i {
-            color: #d9b382;
-            margin-right: 6px;
-        }
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
 
-        .nav-links {
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-        }
-        .nav-links a {
-            color: #f1e9df;
-            text-decoration: none;
-            font-size: 0.75rem;
-            padding: 4px 10px;
-            background: rgba(255,255,255,0.06);
-            border-radius: 30px;
-            transition: 0.2s;
-            white-space: nowrap;
-        }
-        .nav-links a i {
-            margin-right: 4px;
-            font-size: 0.7rem;
-        }
-        .nav-links a:hover {
-            background: rgba(217, 179, 130, 0.2);
-        }
+    .logo {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #f1e9df;
+    }
 
-        .hero {
-            background: linear-gradient(145deg, #3d3227, #1f1913);
-            color: #f5ede4;
-            padding: 40px 0 36px;
-            text-align: center;
-            border-bottom: 4px solid #d9b382;
-        }
+    .logo i {
+      color: #d9b382;
+      margin-right: 6px;
+    }
 
-        .hero h1 {
-            font-size: 2rem;
-            font-weight: 300;
-            letter-spacing: 1px;
-        }
-        .hero h1 span {
-            font-weight: 700;
-            color: #d9b382;
-        }
-        .hero p {
-            font-size: 1rem;
-            padding: 0 8px;
-            margin: 12px 0 24px;
-            opacity: 0.92;
-            line-height: 1.5;
-        }
+    .nav-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
 
-        .btn {
-            display: inline-block;
-            background: #d9b382;
-            color: #1f1913;
-            padding: 14px 32px;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 1rem;
-            text-decoration: none;
-            border: none;
-            width: 100%;
-            max-width: 280px;
-            transition: 0.2s;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.35);
-            cursor: pointer;
-        }
-        .btn i {
-            margin-right: 8px;
-        }
-        .btn:active {
-            transform: scale(0.96);
-        }
-        .btn:disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
-        }
+    .nav-links a {
+      color: #f1e9df;
+      text-decoration: none;
+      font-size: 0.75rem;
+      padding: 4px 10px;
+      background: rgba(255, 255, 255, 0.06);
+      border-radius: 30px;
+      transition: 0.2s;
+      white-space: nowrap;
+    }
 
-        section {
-            padding: 40px 0 32px;
-        }
+    .nav-links a i {
+      margin-right: 4px;
+      font-size: 0.7rem;
+    }
 
-        .section-title {
-            font-size: 1.6rem;
-            text-align: center;
-            font-weight: 400;
-            margin-bottom: 6px;
-            color: #2c241a;
-        }
-        .section-title i {
-            color: #b48b5c;
-            margin-right: 8px;
-        }
+    .nav-links a:hover {
+      background: rgba(217, 179, 130, 0.2);
+    }
 
-        .section-sub {
-            text-align: center;
-            font-size: 0.95rem;
-            color: #5a4c3d;
-            margin-bottom: 28px;
-            padding: 0 4px;
-        }
+    .hero {
+      background: linear-gradient(145deg, #3d3227, #1f1913);
+      color: #f5ede4;
+      padding: 40px 0 36px;
+      text-align: center;
+      border-bottom: 4px solid #d9b382;
+    }
 
-        .menu-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 14px;
-        }
+    .hero h1 {
+      font-size: 2rem;
+      font-weight: 300;
+      letter-spacing: 1px;
+    }
 
-        .menu-card {
-            background: #fffcf8;
-            border-radius: 20px;
-            padding: 18px 12px 16px;
-            text-align: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
-            border: 1px solid #ede6db;
-        }
-        .menu-card i {
-            font-size: 2rem;
-            color: #b48b5c;
-            margin-bottom: 6px;
-        }
-        .menu-card h3 {
-            font-size: 1.1rem;
-            font-weight: 600;
-        }
-        .menu-card .price {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: #9b7a58;
-            margin: 4px 0 6px;
-        }
-        .menu-card .badge {
-            background: #2c241a;
-            color: #ede6db;
-            padding: 2px 12px;
-            border-radius: 30px;
-            font-size: 0.6rem;
-            letter-spacing: 0.3px;
-            display: inline-block;
-            margin-top: 4px;
-        }
+    .hero h1 span {
+      font-weight: 700;
+      color: #d9b382;
+    }
 
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 10px;
-        }
-        .gallery-item {
-            border-radius: 18px;
-            height: 110px;
-            background: #efe6db;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            color: #3d3227;
-            background-image: repeating-linear-gradient(45deg, #d9cbbc 0px, #d9cbbc 4px, #efe6db 4px, #efe6db 12px);
-        }
-        .gallery-item i {
-            background: rgba(255, 252, 248, 0.75);
-            padding: 14px;
-            border-radius: 40px;
-            font-size: 1.6rem;
-        }
-        .gallery-item:nth-child(2) { background: #dacfc1; }
-        .gallery-item:nth-child(3) { background: #cdbcab; }
-        .gallery-item:nth-child(4) { background: #e5d6c6; }
-        .gallery-item:nth-child(5) { background: #d2bfae; }
-        .gallery-item:nth-child(6) { background: #e2d2c0; }
+    .hero p {
+      font-size: 1rem;
+      padding: 0 8px;
+      margin: 12px 0 24px;
+      opacity: 0.92;
+      line-height: 1.5;
+    }
 
-        .reviews-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
-        .review-card {
-            background: #fffcf8;
-            border-radius: 22px;
-            padding: 20px 18px;
-            border: 1px solid #ede6db;
-        }
-        .review-card .stars {
-            color: #d9b382;
-            font-size: 1rem;
-            letter-spacing: 2px;
-        }
-        .review-card p {
-            font-size: 0.95rem;
-            font-style: italic;
-            margin: 6px 0 8px;
-            color: #3d3227;
-        }
-        .review-card .author {
-            font-weight: 600;
-            color: #9b7a58;
-            font-size: 0.9rem;
-        }
+    .btn {
+      display: inline-block;
+      background: #d9b382;
+      color: #1f1913;
+      padding: 14px 32px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      border: none;
+      width: 100%;
+      max-width: 280px;
+      transition: 0.2s;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+      cursor: pointer;
+    }
 
-        .contact-booking-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
+    .btn i {
+      margin-right: 8px;
+    }
 
-        .info-block {
-            background: #fffcf8;
-            border-radius: 28px;
-            padding: 24px 20px;
-            border: 1px solid #ede6db;
-        }
-        .info-block h3 {
-            font-size: 1.3rem;
-            font-weight: 500;
-            margin-bottom: 14px;
-        }
-        .info-block h3 i {
-            color: #b48b5c;
-            margin-right: 8px;
-        }
-        .info-block p {
-            font-size: 0.95rem;
-            margin: 8px 0;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .info-block p i {
-            width: 22px;
-            color: #b48b5c;
-            font-size: 1.1rem;
-        }
+    .btn:active {
+      transform: scale(0.96);
+    }
 
-        .booking-form input,
-        .booking-form textarea {
-            width: 100%;
-            padding: 14px 16px;
-            border-radius: 30px;
-            border: 1px solid #dccfc1;
-            background: #fefcf9;
-            font-size: 0.95rem;
-            margin-bottom: 12px;
-            -webkit-appearance: none;
-            appearance: none;
-        }
-        .booking-form textarea {
-            min-height: 80px;
-            border-radius: 24px;
-            resize: vertical;
-        }
-        .booking-form input:focus,
-        .booking-form textarea:focus {
-            outline: none;
-            border-color: #b48b5c;
-            box-shadow: 0 0 0 3px rgba(180, 139, 92, 0.15);
-        }
+    .btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
 
-        #tgStatus {
-            margin-top: 14px;
-            padding: 12px;
-            border-radius: 16px;
-            font-weight: 600;
-            text-align: center;
-            display: none;
-        }
-        #tgStatus.success {
-            display: block;
-            background: #e8f5e9;
-            color: #2e7d32;
-            border: 1px solid #a5d6a7;
-        }
-        #tgStatus.error {
-            display: block;
-            background: #ffebee;
-            color: #c62828;
-            border: 1px solid #ef9a9a;
-        }
+    section {
+      padding: 40px 0 32px;
+    }
 
-        footer {
-            background: #1f1913;
-            color: #b8aa9a;
-            padding: 28px 0 20px;
-            text-align: center;
-            border-top: 4px solid #d9b382;
-            margin-top: 8px;
-        }
-        footer .socials {
-            font-size: 1.8rem;
-            letter-spacing: 16px;
-            margin-bottom: 12px;
-        }
-        footer .socials a {
-            color: #b8aa9a;
-        }
-        footer .socials a:active {
-            color: #d9b382;
-        }
-        footer p {
-            font-size: 0.9rem;
-            margin-bottom: 4px;
-        }
-        footer small {
-            font-size: 0.7rem;
-            opacity: 0.5;
-        }
+    .section-title {
+      font-size: 1.6rem;
+      text-align: center;
+      font-weight: 400;
+      margin-bottom: 6px;
+      color: #2c241a;
+    }
 
-        @media (max-width: 380px) {
-            .menu-grid {
-                gap: 10px;
-            }
-            .menu-card {
-                padding: 14px 8px;
-            }
-            .menu-card h3 {
-                font-size: 1rem;
-            }
-            .nav-links a {
-                font-size: 0.65rem;
-                padding: 3px 8px;
-            }
-            .hero h1 {
-                font-size: 1.6rem;
-            }
-        }
-    </style>
+    .section-title i {
+      color: #b48b5c;
+      margin-right: 8px;
+    }
 
-    <!-- Font Awesome для иконок -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    .section-sub {
+      text-align: center;
+      font-size: 0.95rem;
+      color: #5a4c3d;
+      margin-bottom: 28px;
+      padding: 0 4px;
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .menu-card {
+      background: #fffcf8;
+      border-radius: 20px;
+      padding: 18px 12px 16px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+      border: 1px solid #ede6db;
+    }
+
+    .menu-card i {
+      font-size: 2rem;
+      color: #b48b5c;
+      margin-bottom: 6px;
+    }
+
+    .menu-card h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    .menu-card .price {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #9b7a58;
+      margin: 4px 0 6px;
+    }
+
+    .menu-card .badge {
+      background: #2c241a;
+      color: #ede6db;
+      padding: 2px 12px;
+      border-radius: 30px;
+      font-size: 0.6rem;
+      letter-spacing: 0.3px;
+      display: inline-block;
+      margin-top: 4px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 10px;
+    }
+
+    .gallery-item {
+      border-radius: 18px;
+      height: 110px;
+      background: #efe6db;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      color: #3d3227;
+      background-image: repeating-linear-gradient(45deg, #d9cbbc 0px, #d9cbbc 4px, #efe6db 4px, #efe6db 12px);
+    }
+
+    .gallery-item i {
+      background: rgba(255, 252, 248, 0.75);
+      padding: 14px;
+      border-radius: 40px;
+      font-size: 1.6rem;
+    }
+
+    .gallery-item:nth-child(2) {
+      background: #dacfc1;
+    }
+
+    .gallery-item:nth-child(3) {
+      background: #cdbcab;
+    }
+
+    .gallery-item:nth-child(4) {
+      background: #e5d6c6;
+    }
+
+    .gallery-item:nth-child(5) {
+      background: #d2bfae;
+    }
+
+    .gallery-item:nth-child(6) {
+      background: #e2d2c0;
+    }
+
+    .reviews-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .review-card {
+      background: #fffcf8;
+      border-radius: 22px;
+      padding: 20px 18px;
+      border: 1px solid #ede6db;
+    }
+
+    .review-card .stars {
+      color: #d9b382;
+      font-size: 1rem;
+      letter-spacing: 2px;
+    }
+
+    .review-card p {
+      font-size: 0.95rem;
+      font-style: italic;
+      margin: 6px 0 8px;
+      color: #3d3227;
+    }
+
+    .review-card .author {
+      font-weight: 600;
+      color: #9b7a58;
+      font-size: 0.9rem;
+    }
+
+    .contact-booking-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .info-block {
+      background: #fffcf8;
+      border-radius: 28px;
+      padding: 24px 20px;
+      border: 1px solid #ede6db;
+    }
+
+    .info-block h3 {
+      font-size: 1.3rem;
+      font-weight: 500;
+      margin-bottom: 14px;
+    }
+
+    .info-block h3 i {
+      color: #b48b5c;
+      margin-right: 8px;
+    }
+
+    .info-block p {
+      font-size: 0.95rem;
+      margin: 8px 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .info-block p i {
+      width: 22px;
+      color: #b48b5c;
+      font-size: 1.1rem;
+    }
+
+    .booking-form input,
+    .booking-form textarea {
+      width: 100%;
+      padding: 14px 16px;
+      border-radius: 30px;
+      border: 1px solid #dccfc1;
+      background: #fefcf9;
+      font-size: 0.95rem;
+      margin-bottom: 12px;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    .booking-form textarea {
+      min-height: 80px;
+      border-radius: 24px;
+      resize: vertical;
+    }
+
+    .booking-form input:focus,
+    .booking-form textarea:focus {
+      outline: none;
+      border-color: #b48b5c;
+      box-shadow: 0 0 0 3px rgba(180, 139, 92, 0.15);
+    }
+
+    #tgStatus {
+      margin-top: 14px;
+      padding: 12px;
+      border-radius: 16px;
+      font-weight: 600;
+      text-align: center;
+      display: none;
+    }
+
+    #tgStatus.success {
+      display: block;
+      background: #e8f5e9;
+      color: #2e7d32;
+      border: 1px solid #a5d6a7;
+    }
+
+    #tgStatus.error {
+      display: block;
+      background: #ffebee;
+      color: #c62828;
+      border: 1px solid #ef9a9a;
+    }
+
+    footer {
+      background: #1f1913;
+      color: #b8aa9a;
+      padding: 28px 0 20px;
+      text-align: center;
+      border-top: 4px solid #d9b382;
+      margin-top: 8px;
+    }
+
+    footer .socials {
+      font-size: 1.8rem;
+      letter-spacing: 16px;
+      margin-bottom: 12px;
+    }
+
+    footer .socials a {
+      color: #b8aa9a;
+    }
+
+    footer .socials a:active {
+      color: #d9b382;
+    }
+
+    footer p {
+      font-size: 0.9rem;
+      margin-bottom: 4px;
+    }
+
+    footer small {
+      font-size: 0.7rem;
+      opacity: 0.5;
+    }
+
+    @media (max-width: 380px) {
+      .menu-grid {
+        gap: 10px;
+      }
+
+      .menu-card {
+        padding: 14px 8px;
+      }
+
+      .menu-card h3 {
+        font-size: 1rem;
+      }
+
+      .nav-links a {
+        font-size: 0.65rem;
+        padding: 3px 8px;
+      }
+
+      .hero h1 {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+
+  <!-- Font Awesome для иконок -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+
 <body>
 
-<header>
+  <header>
     <div class="container header-inner">
-        <div class="logo"><i class="fas fa-mug-hot"></i> Уют</div>
-        <nav class="nav-links">
-            <a href="#menu"><i class="fas fa-utensils"></i> Меню</a>
-            <a href="#gallery"><i class="fas fa-images"></i> Фото</a>
-            <a href="#reviews"><i class="fas fa-star"></i> Отзывы</a>
-            <a href="#contact"><i class="fas fa-phone-alt"></i> Контакты</a>
-        </nav>
+      <div class="logo"><i class="fas fa-mug-hot"></i> Уют</div>
+      <nav class="nav-links">
+        <a href="#menu"><i class="fas fa-utensils"></i> Меню</a>
+        <a href="#gallery"><i class="fas fa-images"></i> Фото</a>
+        <a href="#reviews"><i class="fas fa-star"></i> Отзывы</a>
+        <a href="#contact"><i class="fas fa-phone-alt"></i> Контакты</a>
+      </nav>
     </div>
-</header>
+  </header>
 
-<!-- ГЕРОЙ -->
-<section class="hero">
+  <!-- ГЕРОЙ -->
+  <section class="hero">
     <div class="container">
-        <h1>Добро пожаловать в <span>«Уют»</span></h1>
-        <p>Ароматный кофе, домашняя выпечка и тёплая атмосфера. Приходите — у нас вкусно как дома.</p>
-        <a href="#contact" class="btn"><i class="fas fa-calendar-check"></i> Забронировать</a>
+      <h1>Добро пожаловать в <span>«Уют»</span></h1>
+      <p>Ароматный кофе, домашняя выпечка и тёплая атмосфера. Приходите — у нас вкусно как дома.</p>
+      <a href="#contact" class="btn"><i class="fas fa-calendar-check"></i> Забронировать</a>
     </div>
-</section>
+  </section>
 
-<!-- МЕНЮ -->
-<section id="menu">
+  <!-- МЕНЮ -->
+  <section id="menu">
     <div class="container">
-        <h2 class="section-title"><i class="fas fa-coffee"></i> Меню</h2>
-        <p class="section-sub">Классика и авторские позиции</p>
-        <div class="menu-grid">
-            <div class="menu-card">
-                <i class="fas fa-mug-saucer"></i>
-                <h3>Эспрессо</h3>
-                <div class="price">180 ₽</div>
-                <span class="badge">хит</span>
-            </div>
-            <div class="menu-card">
-                <i class="fas fa-cake-candles"></i>
-                <h3>Чизкейк</h3>
-                <div class="price">320 ₽</div>
-                <span class="badge">домашний</span>
-            </div>
-            <div class="menu-card">
-                <i class="fas fa-wheat-awn"></i>
-                <h3>Круассан</h3>
-                <div class="price">210 ₽</div>
-                <span class="badge">свежий</span>
-            </div>
-            <div class="menu-card">
-                <i class="fas fa-mug-hot"></i>
-                <h3>Латте</h3>
-                <div class="price">240 ₽</div>
-                <span class="badge">популярное</span>
-            </div>
+      <h2 class="section-title"><i class="fas fa-coffee"></i> Меню</h2>
+      <p class="section-sub">Классика и авторские позиции</p>
+      <div class="menu-grid">
+        <div class="menu-card">
+          <i class="fas fa-mug-saucer"></i>
+          <h3>Эспрессо</h3>
+          <div class="price">180 ₽</div>
+          <span class="badge">хит</span>
         </div>
-    </div>
-</section>
-
-<!-- ГАЛЕРЕЯ -->
-<section id="gallery" style="background: #f4eee7;">
-    <div class="container">
-        <h2 class="section-title"><i class="fas fa-camera"></i> Атмосфера</h2>
-        <p class="section-sub">Уютные уголки и наши блюда</p>
-        <div class="gallery-grid">
-            <div class="gallery-item"><i class="fas fa-mug-hot"></i></div>
-            <div class="gallery-item"><i class="fas fa-cake"></i></div>
-            <div class="gallery-item"><i class="fas fa-chair"></i></div>
-            <div class="gallery-item"><i class="fas fa-plant-wilt"></i></div>
-            <div class="gallery-item"><i class="fas fa-book-open"></i></div>
-            <div class="gallery-item"><i class="fas fa-wifi"></i></div>
+        <div class="menu-card">
+          <i class="fas fa-cake-candles"></i>
+          <h3>Чизкейк</h3>
+          <div class="price">320 ₽</div>
+          <span class="badge">домашний</span>
         </div>
-    </div>
-</section>
-
-<!-- ОТЗЫВЫ -->
-<section id="reviews">
-    <div class="container">
-        <h2 class="section-title"><i class="fas fa-comment-dots"></i> Отзывы</h2>
-        <p class="section-sub">Что говорят гости</p>
-        <div class="reviews-grid">
-            <div class="review-card">
-                <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                <p>«Лучший кофе в городе! Чизкейк тает во рту.»</p>
-                <span class="author">— Анна К.</span>
-            </div>
-            <div class="review-card">
-                <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                <p>«Очень уютно, идеально для встречи с друзьями.»</p>
-                <span class="author">— Дмитрий С.</span>
-            </div>
-            <div class="review-card">
-                <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
-                <p>«Круассаны божественные! Цены приятные.»</p>
-                <span class="author">— Елена В.</span>
-            </div>
+        <div class="menu-card">
+          <i class="fas fa-wheat-awn"></i>
+          <h3>Круассан</h3>
+          <div class="price">210 ₽</div>
+          <span class="badge">свежий</span>
         </div>
-    </div>
-</section>
-
-<!-- КОНТАКТЫ + БРОНЬ -->
-<section id="contact" style="background: #f4eee7;">
-    <div class="container">
-        <h2 class="section-title"><i class="fas fa-address-card"></i> Контакты</h2>
-        <p class="section-sub">Забронируйте столик — заявка придёт нам в Telegram</p>
-        <div class="contact-booking-grid">
-            <div class="info-block">
-                <h3><i class="fas fa-map-pin"></i> Как нас найти</h3>
-                <p><i class="fas fa-location-dot"></i> ул. Арбатская, 15</p>
-                <p><i class="fas fa-phone"></i> +7 (495) 123-45-67</p>
-                <p><i class="fas fa-envelope"></i> hello@cafeuyut.ru</p>
-                <p><i class="fas fa-clock"></i> 08:00 – 23:00</p>
-                <p style="margin-top:12px; font-size:0.85rem; opacity:0.7;"><i class="fas fa-credit-card"></i> Оплата картой и наличными</p>
-            </div>
-
-            <div class="info-block booking-form">
-                <h3><i class="fas fa-paper-plane"></i> Забронировать</h3>
-                <form id="tgForm">
-                    <input type="text" id="tgName" placeholder="Ваше имя" required>
-                    <input type="tel" id="tgPhone" placeholder="Телефон" required>
-                    <input type="date" id="tgDate" required>
-                    <input type="time" id="tgTime" required>
-                    <textarea id="tgComment" placeholder="Пожелания (гости, условия...)"></textarea>
-                    <button type="submit" class="btn" id="tgSubmit">
-                        <i class="fas fa-paper-plane"></i> Отправить заявку
-                    </button>
-                </form>
-                <div id="tgStatus"></div>
-            </div>
+        <div class="menu-card">
+          <i class="fas fa-mug-hot"></i>
+          <h3>Латте</h3>
+          <div class="price">240 ₽</div>
+          <span class="badge">популярное</span>
         </div>
+      </div>
     </div>
-</section>
+  </section>
 
-<footer>
+  <!-- ГАЛЕРЕЯ -->
+  <section id="gallery" style="background: #f4eee7;">
     <div class="container">
-        <div class="socials">
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-vk"></i></a>
-            <a href="#"><i class="fab fa-telegram"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
-        </div>
-        <p>Кофейня «Уют» &bull; всегда рады гостям</p>
-        <small>&copy; 2026 • Сделано с теплом</small>
+      <h2 class="section-title"><i class="fas fa-camera"></i> Атмосфера</h2>
+      <p class="section-sub">Уютные уголки и наши блюда</p>
+      <div class="gallery-grid">
+        <div class="gallery-item"><i class="fas fa-mug-hot"></i></div>
+        <div class="gallery-item"><i class="fas fa-cake"></i></div>
+        <div class="gallery-item"><i class="fas fa-chair"></i></div>
+        <div class="gallery-item"><i class="fas fa-plant-wilt"></i></div>
+        <div class="gallery-item"><i class="fas fa-book-open"></i></div>
+        <div class="gallery-item"><i class="fas fa-wifi"></i></div>
+      </div>
     </div>
-</footer>
+  </section>
 
-<!-- ===== ВЕСЬ JS ВНУТРИ ===== -->
-<script>
-    document.getElementById('tgForm').addEventListener('submit', async function(e) {
-        e.preventDefault();
-        
-        const btn = document.getElementById('tgSubmit');
-        const status = document.getElementById('tgStatus');
-        
-        // ТВОИ ДАННЫЕ
-        const BOT_TOKEN = '8716681980:AAGItB01NDrp17bKF8g4pAFsorStzgdFZG8';
-        const CHAT_ID = '6347284771';
-        
-        const name = document.getElementById('tgName').value.trim();
-        const phone = document.getElementById('tgPhone').value.trim();
-        const date = document.getElementById('tgDate').value;
-        const time = document.getElementById('tgTime').value;
-        const comment = document.getElementById('tgComment').value.trim() || '—';
-        
-        if (!name || !phone || !date || !time) {
-            status.className = 'error';
-            status.textContent = '⚠️ Заполните все обязательные поля!';
-            return;
+  <!-- ОТЗЫВЫ -->
+  <section id="reviews">
+    <div class="container">
+      <h2 class="section-title"><i class="fas fa-comment-dots"></i> Отзывы</h2>
+      <p class="section-sub">Что говорят гости</p>
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+              class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <p>«Лучший кофе в городе! Чизкейк тает во рту.»</p>
+          <span class="author">— Анна К.</span>
+        </div>
+        <div class="review-card">
+          <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+              class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <p>«Очень уютно, идеально для встречи с друзьями.»</p>
+          <span class="author">— Дмитрий С.</span>
+        </div>
+        <div class="review-card">
+          <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+              class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+          <p>«Круассаны божественные! Цены приятные.»</p>
+          <span class="author">— Елена В.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- КОНТАКТЫ + БРОНЬ -->
+  <section id="contact" style="background: #f4eee7;">
+    <div class="container">
+      <h2 class="section-title"><i class="fas fa-address-card"></i> Контакты</h2>
+      <p class="section-sub">Забронируйте столик — заявка придёт нам в Telegram</p>
+      <div class="contact-booking-grid">
+        <div class="info-block">
+          <h3><i class="fas fa-map-pin"></i> Как нас найти</h3>
+          <p><i class="fas fa-location-dot"></i> ул. Арбатская, 15</p>
+          <p><i class="fas fa-phone"></i> +7 (495) 123-45-67</p>
+          <p><i class="fas fa-envelope"></i> hello@cafeuyut.ru</p>
+          <p><i class="fas fa-clock"></i> 08:00 – 23:00</p>
+          <p style="margin-top:12px; font-size:0.85rem; opacity:0.7;"><i class="fas fa-credit-card"></i> Оплата картой и
+            наличными</p>
+        </div>
+
+        <div class="info-block booking-form">
+          <h3><i class="fas fa-paper-plane"></i> Забронировать</h3>
+          <form id="tgForm">
+            <input type="text" id="tgName" placeholder="Ваше имя" required>
+            <input type="tel" id="tgPhone" placeholder="Телефон" required>
+            <input type="date" id="tgDate" required>
+            <input type="time" id="tgTime" required>
+            <textarea id="tgComment" placeholder="Пожелания (гости, условия...)"></textarea>
+            <button type="submit" class="btn" id="tgSubmit">
+              <i class="fas fa-paper-plane"></i> Отправить заявку
+            </button>
+          </form>
+          <div id="tgStatus"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="socials">
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-vk"></i></a>
+        <a href="#"><i class="fab fa-telegram"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+      <p>Кофейня «Уют» &bull; всегда рады гостям</p>
+      <small>&copy; 2026 • Сделано с теплом</small>
+    </div>
+  </footer>
+
+  <!-- ===== ВЕСЬ JS ВНУТРИ ===== -->
+  <script>
+    document.getElementById('tgForm').addEventListener('submit', async function (e) {
+      e.preventDefault();
+
+      const btn = document.getElementById('tgSubmit');
+      const status = document.getElementById('tgStatus');
+
+      // ТВОИ ДАННЫЕ
+      const BOT_TOKEN = '8716681980:AAGItB01NDrp17bKF8g4pAFsorStzgdFZG8';
+      const CHAT_ID = '6347284771';
+
+      const name = document.getElementById('tgName').value.trim();
+      const phone = document.getElementById('tgPhone').value.trim();
+      const date = document.getElementById('tgDate').value;
+      const time = document.getElementById('tgTime').value;
+      const comment = document.getElementById('tgComment').value.trim() || '—';
+
+      if (!name || !phone || !date || !time) {
+        status.className = 'error';
+        status.textContent = '⚠️ Заполните все обязательные поля!';
+        return;
+      }
+
+      const message = `🆕 НОВАЯ ЗАЯВКА В КАФЕ\n\n` +
+        `👤 Имя: ${name}\n` +
+        `📞 Телефон: ${phone}\n` +
+        `📅 Дата: ${date}\n` +
+        `⏰ Время: ${time}\n` +
+        `📝 Пожелания: ${comment}\n\n` +
+        `📍 Отправлено с сайта "Уют"`;
+
+      btn.disabled = true;
+      btn.innerHTML = '⏳ Отправка...';
+      status.className = '';
+      status.textContent = '';
+
+      try {
+        const response = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            chat_id: CHAT_ID,
+            text: message,
+            parse_mode: 'HTML'
+          })
+        });
+
+        const data = await response.json();
+
+        if (data.ok) {
+          status.className = 'success';
+          status.textContent = '✅ Заявка отправлена! Мы свяжемся с вами в ближайшее время. ☕';
+          document.getElementById('tgForm').reset();
+        } else {
+          console.error('Telegram error:', data);
+          status.className = 'error';
+          status.textContent = '❌ Ошибка отправки. Попробуйте позже или позвоните нам.';
         }
-        
-        const message = `🆕 НОВАЯ ЗАЯВКА В КАФЕ\n\n` +
-                        `👤 Имя: ${name}\n` +
-                        `📞 Телефон: ${phone}\n` +
-                        `📅 Дата: ${date}\n` +
-                        `⏰ Время: ${time}\n` +
-                        `📝 Пожелания: ${comment}\n\n` +
-                        `📍 Отправлено с сайта "Уют"`;
-        
-        btn.disabled = true;
-        btn.innerHTML = '⏳ Отправка...';
-        status.className = '';
-        status.textContent = '';
-        
-        try {
-            const response = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    chat_id: CHAT_ID,
-                    text: message,
-                    parse_mode: 'HTML'
-                })
-            });
-            
-            const data = await response.json();
-            
-            if (data.ok) {
-                status.className = 'success';
-                status.textContent = '✅ Заявка отправлена! Мы свяжемся с вами в ближайшее время. ☕';
-                document.getElementById('tgForm').reset();
-            } else {
-                console.error('Telegram error:', data);
-                status.className = 'error';
-                status.textContent = '❌ Ошибка отправки. Попробуйте позже или позвоните нам.';
-            }
-        } catch (error) {
-            console.error('Network error:', error);
-            status.className = 'error';
-            status.textContent = '❌ Нет соединения с интернетом. Проверьте связь.';
-        }
-        
-        btn.disabled = false;
-        btn.innerHTML = '<i class="fas fa-paper-plane"></i> Отправить заявку';
+      } catch (error) {
+        console.error('Network error:', error);
+        status.className = 'error';
+        status.textContent = '❌ Нет соединения с интернетом. Проверьте связь.';
+      }
+
+      btn.disabled = false;
+      btn.innerHTML = '<i class="fas fa-paper-plane"></i> Отправить заявку';
     });
-</script>
+  </script>
 
 </body>
+
 </html>
