@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Кофейня «Уют»</title>
+  
+  <!-- Подключаем стили -->
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Иконки -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+<header>
+  <div class="container header-inner">
+    <div class="logo"><i class="fas fa-mug-hot"></i> Уют</div>
+    <nav class="nav-links">
+      <a href="#menu"><i class="fas fa-utensils"></i> Меню</a>
+      <a href="#gallery"><i class="fas fa-images"></i> Галерея</a>
+      <a href="#reviews"><i class="fas fa-star"></i> Отзывы</a>
+      <a href="#contact"><i class="fas fa-phone-alt"></i> Контакты</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ГЕРОЙ -->
+<section class="hero">
+  <div class="container">
+    <h1>Добро пожаловать в <span>«Уют»</span></h1>
+    <p>Ароматный кофе, домашняя выпечка и тёплая атмосфера в самом сердце города. Приходите — у нас вкусно как дома.</p>
+    <a href="#contact" class="btn"><i class="fas fa-calendar-check"></i> Забронировать столик</a>
+  </div>
+</section>
+
+<!-- МЕНЮ -->
+<section id="menu">
+  <div class="container">
+    <h2 class="section-title"><i class="fas fa-coffee"></i> Наше меню</h2>
+    <p class="section-sub">От классического эспрессо до авторских десертов — каждый найдет что-то по душе.</p>
+    <div class="menu-grid">
+      <div class="menu-card">
+        <i class="fas fa-mug-saucer"></i>
+        <h3>Эспрессо</h3>
+        <div class="price">180 ₽</div>
+        <p>Насыщенный, бодрящий, с бархатистой пенкой.</p>
+        <span class="badge">хит</span>
+      </div>
+      <div class="menu-card">
+        <i class="fas fa-cake-candles"></i>
+        <h3>Чизкейк</h3>
+        <div class="price">320 ₽</div>
+        <p>Нежный творожный десерт с ягодным топпингом.</p>
+        <span class="badge">домашний</span>
+      </div>
+      <div class="menu-card">
+        <i class="fas fa-wheat-awn"></i>
+        <h3>Круассан</h3>
+        <div class="price">210 ₽</div>
+        <p>Хрустящий, слоёный, с масляным вкусом.</p>
+        <span class="badge">свежая выпечка</span>
+      </div>
+      <div class="menu-card">
+        <i class="fas fa-mug-hot"></i>
+        <h3>Латте</h3>
+        <div class="price">240 ₽</div>
+        <p>Шелковистый кофе с молоком и лёгкой пенкой.</p>
+        <span class="badge">популярное</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ГАЛЕРЕЯ -->
+<section id="gallery" style="background: #f4eee7;">
+  <div class="container">
+    <h2 class="section-title"><i class="fas fa-camera"></i> Атмосфера</h2>
+    <p class="section-sub">Уютные уголки, интерьер и наши фирменные блюда.</p>
+    <div class="gallery-grid">
+      <div class="gallery-item"><i class="fas fa-mug-hot"></i></div>
+      <div class="gallery-item"><i class="fas fa-cake"></i></div>
+      <div class="gallery-item"><i class="fas fa-chair"></i></div>
+      <div class="gallery-item"><i class="fas fa-plant-wilt"></i></div>
+      <div class="gallery-item"><i class="fas fa-book-open"></i></div>
+      <div class="gallery-item"><i class="fas fa-wifi"></i></div>
+    </div>
+  </div>
+</section>
+
+<!-- ОТЗЫВЫ -->
+<section id="reviews">
+  <div class="container">
+    <h2 class="section-title"><i class="fas fa-comment-dots"></i> Отзывы гостей</h2>
+    <p class="section-sub">Наши посетители делятся впечатлениями.</p>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p>«Лучший кофе в городе! Чизкейк тает во рту, а персонал очень дружелюбный.»</p>
+        <span class="author">— Анна К.</span>
+      </div>
+      <div class="review-card">
+        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p>«Уютная атмосфера, идеально для работы или встречи с друзьями. Обязательно вернусь!»</p>
+        <span class="author">— Дмитрий С.</span>
+      </div>
+      <div class="review-card">
+        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+        <p>«Круассаны просто божественные! И очень приятные цены для такого качества.»</p>
+        <span class="author">— Елена В.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- КОНТАКТЫ + БРОНЬ -->
+<section id="contact" style="background: #f4eee7;">
+  <div class="container">
+    <h2 class="section-title"><i class="fas fa-address-card"></i> Контакты и бронь</h2>
+    <p class="section-sub">Забронируйте столик или свяжитесь с нами удобным способом.</p>
+    <div class="contact-booking-grid">
+      <!-- Контакты -->
+      <div class="info-block">
+        <h3><i class="fas fa-map-pin"></i> Как нас найти</h3>
+        <p><i class="fas fa-location-dot"></i> ул. Арбатская, 15, Москва</p>
+        <p><i class="fas fa-phone"></i> +7 (495) 123-45-67</p>
+        <p><i class="fas fa-envelope"></i> hello@cafeuyut.ru</p>
+        <p><i class="fas fa-clock"></i> Ежедневно: 08:00 – 23:00</p>
+        <p style="margin-top: 18px; font-size: 0.95rem; opacity: 0.8;"><i class="fas fa-credit-card"></i> Принимаем оплату картой и наличными.</p>
+      </div>
+
+      <!-- Форма бронирования -->
+      <div class="info-block booking-form">
+        <h3><i class="fas fa-pen-to-square"></i> Забронировать</h3>
+        <form id="tgForm">
+          <input type="text" id="tgName" placeholder="Ваше имя" required>
+          <input type="tel" id="tgPhone" placeholder="Телефон" required>
+          <input type="date" id="tgDate" required>
+          <input type="time" id="tgTime" required>
+          <textarea id="tgComment" placeholder="Пожелания (количество гостей, особые условия...)"></textarea>
+          <button type="submit" class="btn"><i class="fas fa-paper-plane"></i> Отправить заявку</button>
+        </form>
+        <div id="tgStatus"></div>
+        <p style="margin-top: 12px; font-size: 0.9rem; color: #5f5040;"><i class="fas fa-info-circle"></i> Мы свяжемся с вами для подтверждения</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ФУТЕР -->
+<footer>
+  <div class="container">
+    <div class="socials">
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-vk"></i></a>
+      <a href="#"><i class="fab fa-telegram"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+    </div>
+    <p>Кофейня «Уют» &bull; всегда рады гостям</p>
+    <small>&copy; 2026 • Сделано с теплом</small>
+  </div>
+</footer>
+
+<!-- Подключаем JavaScript -->
+<script src="script.js"></script>
+
+</body>
+</html>
