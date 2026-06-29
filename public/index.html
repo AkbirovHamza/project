@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Заявка</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="panel">
+        <div>
+          <p class="eyebrow">Форма заявки</p>
+          <h1>Оставьте заявку</h1>
+          <p class="lead">Заявка сохранится в базе данных и появится в разделе администратора.</p>
+        </div>
+
+        <form id="application-form" class="form">
+          <label>
+            Имя
+            <input name="name" autocomplete="name" required />
+          </label>
+          <label>
+            Телефон
+            <input name="phone" autocomplete="tel" required />
+          </label>
+          <label>
+            Email
+            <input name="email" autocomplete="email" type="email" />
+          </label>
+          <label>
+            Сообщение
+            <textarea name="message" rows="4"></textarea>
+          </label>
+          <button type="submit">Отправить заявку</button>
+          <p id="form-status" class="status" role="status"></p>
+        </form>
+      </section>
+    </main>
+    <script src="/app.js" type="module"></script>
+  </body>
+</html>
