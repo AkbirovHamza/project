@@ -1,0 +1,20 @@
+{
+  "name": "orders-app",
+  "version": "1.0.0",
+  "description": "Site with persisted customer applications",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "db:generate": "drizzle-kit generate"
+  },
+  "dependencies": {
+    "@netlify/database": "^1.1.0",
+    "drizzle-orm": "^1.0.0-beta.22"
+  },
+  "devDependencies": {
+    "@netlify/functions": "^5.3.0",
+    "@types/node": "^26.0.1",
+    "drizzle-kit": "^1.0.0-beta.22",
+    "typescript": "~5.8.0"
+  }
+}

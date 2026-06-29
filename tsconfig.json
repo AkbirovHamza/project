@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "noEmit": true,
+    "strict": true,
+    "target": "ES2022",
+    "skipLibCheck": true,
+    "types": ["node", "@netlify/functions"]
+  },
+  "include": ["db/**/*.ts", "netlify/functions/**/*.ts", "drizzle.config.ts"]
+}
